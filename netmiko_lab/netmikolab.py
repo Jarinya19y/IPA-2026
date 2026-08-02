@@ -64,7 +64,7 @@ s1_config = [
 
 # 2. Router R1 Configuration (VRF Aware)
 r1_config = [
-    'interface GigabitEthernet0/2',
+    'interface GigabitEthernet0/1',
     'ip vrf forwarding Control-data',
     'ip addr 172.31.105.49 255.255.255.240',
     'no shutdown',
