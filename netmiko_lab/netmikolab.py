@@ -118,7 +118,7 @@ r2_config = [
     'exit',
     # PAT inside CONTROL_DATA VRF
     'ip access-list standard NAT_ACL',
-    'permit 172.31.105.32 0.0.0.15',
+    'permit 172.31.105.16 0.0.0.15',
     'exit',
     'ip nat inside source list NAT_ACL interface GigabitEthernet0/3 vrf Control-data overload',
     # OSPF in CONTROL_DATA VRF
