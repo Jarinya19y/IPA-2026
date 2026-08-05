@@ -5,9 +5,6 @@ from netmiko import ConnectHandler
 # SSH Username for the devices
 USERNAME = "admin"  # Update with your device username
 
-# Optional: Path to private key if it's not in default ~/.ssh/id_rsa or using ssh-agent
-# KEY_FILE = os.path.expanduser("~/.ssh/id_rsa") 
-
 # Device inventory using SSH Keys
 devices = {
     'S1': {
@@ -56,6 +53,7 @@ s1_config = [
     'ip access-list standard TELNET_SSH_MGMT',
     'permit 172.31.105.0 0.0.0.15',   # Allow Mgmt Subnet 172.31.105.0/28
     'permit 192.168.1.0 0.0.0.255',
+    'permit 10.30.6.0 0.0.0.255',
     'exit',
     'line vty 0 15',
     'access-class TELNET_SSH_MGMT in',
@@ -84,6 +82,7 @@ r1_config = [
     'ip access-list standard TELNET_SSH_MGMT',
     'permit 172.31.105.0 0.0.0.15',
     'permit 192.168.1.0 0.0.0.255',
+    'permit 10.30.6.0 0.0.0.255',
     'exit',
     'line vty 0 4',
     'access-class TELNET_SSH_MGMT in',
@@ -135,6 +134,7 @@ r2_config = [
     'ip access-list standard TELNET_SSH_MGMT',
     'permit 172.31.105.0 0.0.0.15',
     'permit 192.168.1.0 0.0.0.255',
+    'permit 10.30.6.0 0.0.0.255',
     'exit',
     'line vty 0 4',
     'access-class TELNET_SSH_MGMT in',
